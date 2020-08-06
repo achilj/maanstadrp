@@ -89,7 +89,7 @@ if(command === `${prefix}regels`){
         .setFooter("Made By RealistiqRP", "https://media.discordapp.net/attachments/629335056095117312/740917308872065084/icon_donationpage.png")
         .setTimestamp("Now")
         
-            return message.author.send("Doei: https://media0.giphy.com/media/jttzrTgEahKVolSPWw/source.gif", message.channel.send("Check je DM!"));
+            return message.author.send(botEmbed, message.channel.send("Check je DM!"));
         }
 
         if (command === `${prefix}kick`) {

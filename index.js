@@ -73,20 +73,23 @@ client.on("message", async message =>{
             return message.channel.send(botEmbed);
         }
 
-        if(command === `${prefix}regels`){
+if(command === `${prefix}regels`){
 
-            var botEmbed = new discord.MessageEmbed()
-            .setTitle("Algemene Regels - Converted From The Official Rules!")
-            .setDescription("Hier volgen de regels!")
-            .setColor("#1efd00")
-            .addFields(
-                {name: "**__MaanstadRP - Regels__**", value: "__Roleplay Rules:__\nJe bent verplicht je karakter eigenschappen te volgen, bv. als je een oud persoon bent dat je ook als een opa praat!\n\n__Powergaming:__\nJe mag geen misbruik maken van je revives, ook telt dit mee dat je geen tactics mag gebruiken bv na een ambulance revive dat je meteen begint te vechten\n\n__Safezones:__\nDit houd in dat je binnen de volgende zones niet mag vechten of mensen ontvoeren!\n\nHet Ziekenhuis, Hier is de enige plaats waar mensen kunnen komen om hun te laten verzorgen, hier mag je dus niet vechten of mensen ontvoeren (inclusief de stoep)\n\nJe mag burgers niet verplichten om geld te pinnen om daarna ze te bestelen!\n\nJe Appartement, Hier mag je niemand ontvoeren of vermoorden!\n\nHeel blokkenpark is een savezone, hier mag je wel vechten maar niemand ontvoeren!\n\n\n__Algemene Ingame Regels:__\nVDM, VehicleDeathMatch, mensen met opzet aanrijden of dood rijden is niet toegestaan\n\nRDM, RandomDeathMatch, zonder aanleiding tot RP mag je niet zomaar iemand doodmaken\n\n\n\nMeerdere Regels zullen nog aangepast komen!"},
-            )
-            .setThumbnail("https://media.discordapp.net/attachments/629335056095117312/740944840552087632/ShyCautiousAfricanpiedkingfisher-size_restricted.gif")
-            .setFooter("By RealistiqRP", "https://media.discordapp.net/attachments/629335056095117312/740917308872065084/icon_donationpage.png")
-            .setTimestamp("Now")
-            
-            return message.author.send(botEmbed, message.channel.send("Check je DM!"));
+        var botEmbed = new discord.MessageEmbed()
+        .setTitle("ALGEMENE FIVEM SERVER REGELS")
+        .setDescription("*Rule Version: `1.1`*")
+        .setColor("#ff0000")
+        .addFields(
+            {name: "__Roleplay Rules:__", value: "Je bent verplicht je karakter eigenschappen te volgen, bv. als je een oud persoon bent dat je ook als een opa praat!"},
+            {name: "__Powergaming:__", value: "Je mag geen misbruik maken van je revives, ook telt dit mee dat je geen tactics mag gebruiken bv na een ambulance revive dat je meteen begint te vechten"},
+            {name: "__Safezones:__", value: "Dit houd in dat je binnen de volgende zones niet mag vechten of mensen ontvoeren!\nHet Ziekenhuis, Hier is de enige plaats waar mensen kunnen komen om hun te laten verzorgen, hier mag je dus niet vechten of mensen ontvoeren (inclusief de stoep)\nJe mag burgers niet verplichten om geld te pinnen om daarna ze te bestelen!\nJe Appartement, Hier mag je niemand ontvoeren of vermoorden!\nHeel blokkenpark is een savezone, hier mag je wel vechten maar niemand ontvoeren!"},
+            {name: "__Algemene Regels:__", value: "VDM, VehicleDeathMatch, mensen met opzet aanrijden of dood rijden is niet toegestaan\nRDM, RandomDeathMatch, zonder aanleiding tot RP mag je niet zomaar iemand doodmaken"}
+        )
+        .setThumbnail("https://cdn.discordapp.com/attachments/678506660666277889/740625216287539230/maandstad_logo.jpg")
+        .setFooter("Made By RealistiqRP", "https://media.discordapp.net/attachments/629335056095117312/740917308872065084/icon_donationpage.png")
+        .setTimestamp("Now")
+        
+            return message.author.send("Doei: https://media0.giphy.com/media/jttzrTgEahKVolSPWw/source.gif", message.channel.send("Check je DM!"));
         }
 
         if (command === `${prefix}kick`) {

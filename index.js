@@ -85,7 +85,7 @@ if(command === `${prefix}regels`){
             {name: "__Safezones:__", value: "Dit houd in dat je binnen de volgende zones niet mag vechten of mensen ontvoeren!\nHet Ziekenhuis, Hier is de enige plaats waar mensen kunnen komen om hun te laten verzorgen, hier mag je dus niet vechten of mensen ontvoeren (inclusief de stoep)\nJe mag burgers niet verplichten om geld te pinnen om daarna ze te bestelen!\nJe Appartement, Hier mag je niemand ontvoeren of vermoorden!\nHeel blokkenpark is een savezone, hier mag je wel vechten maar niemand ontvoeren!"},
             {name: "__Algemene Regels:__", value: "VDM, VehicleDeathMatch, mensen met opzet aanrijden of dood rijden is niet toegestaan\nRDM, RandomDeathMatch, zonder aanleiding tot RP mag je niet zomaar iemand doodmaken"}
         )
-        .setThumbnail("https://cdn.discordapp.com/attachments/678506660666277889/740625216287539230/maandstad_logo.jpg")
+        .setThumbnail("https://cdn.discordapp.com/attachments/629335056095117312/740944840552087632/ShyCautiousAfricanpiedkingfisher-size_restricted.gif")
         .setFooter("Made By RealistiqRP", "https://media.discordapp.net/attachments/629335056095117312/740917308872065084/icon_donationpage.png")
         .setTimestamp("Now")
         

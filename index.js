@@ -26,9 +26,6 @@ client.on("message", async message =>{
     if(command === `${prefix}status`){
         return message.channel.send("**Status:** `Under Maintenance... :)`")
     }
-    if(command === `${prefix}regels`){
-        return message.channel.send("Check je DM! seksie tijger! 😘")
-    }
     if(command === `${prefix}help`){
         return message.author.send("**Information Of Bot Commands**\n*Het prefix van de bot is `/`*\n\n`/Info`: Geeft deze lijst weer!\n\n`/server`: Geeft informatie over de FiveM Server weer!\n\n`/info`: Geeft informatie over Maanstad weer!\n\n`/status`: Geeft de status van de bot\n\n`/rules`: Geeft de regels")
     }
@@ -92,7 +89,7 @@ if(command === `${prefix}regels`){
         .setFooter("Made By RealistiqRP", "https://media.discordapp.net/attachments/629335056095117312/740917308872065084/icon_donationpage.png")
         .setTimestamp("Now")
         
-            return message.author.send(botEmbed);
+            return message.author.send(botEmbed), message.channel.send("Check je DM! seksie tijger! 😘");
         }
 
         if (command === `${prefix}kick`) {

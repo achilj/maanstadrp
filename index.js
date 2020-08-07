@@ -2,12 +2,12 @@ const discord = require("discord.js");
 const botConfig = require("./botConfig.json");
 
 const client = new discord.Client();
-client.login(process.env.token);
+client.login(botConfig.token);
 
 client.on("ready", async () =>{
 
     console.log(`${client.user.username} Is Online!`);
-    client.user.setActivity("/help to get started!", {type: "PLAYING"})
+    client.user.setActivity("/help to get started!", {type: "WATCHING"})
 
 });
 
@@ -24,17 +24,17 @@ client.on("message", async message =>{
     var command = messageArray[0];
 
     if(command === `${prefix}status`){
-        return message.channel.send("**Status:** `Under Maintenance... :)`")
+        return message.channel.send("**Status:** `Under Maintenance...👷🏼‍♂️🔧`")
     }
     if(command === `${prefix}help`){
-        return message.author.send("**Information Of Bot Commands**\n*Het prefix van de bot is `/`*\n\n`/Info`: Geeft deze lijst weer!\n\n`/server`: Geeft informatie over de FiveM Server weer!\n\n`/info`: Geeft informatie over Maanstad weer!\n\n`/status`: Geeft de status van de bot\n\n`/rules`: Geeft de regels")
+        return message.author.send("**Information Of Bot Commands**\n*Het prefix van de bot is `/`*\n\n`/Info`: Geeft deze lijst weer!\n\n`/server`: Geeft informatie over de FiveM Server weer!\n\n`/info`: Geeft informatie over Maanstad weer!\n\n`/status`: Geeft de status van de bot\n\n`/rules`: Geeft de regels"), message.channel.send("Check je DM lieve schat💖!");
     }
     if(command === `${prefix}hallo`){
-        return message.author.send("Doei: https://media0.giphy.com/media/jttzrTgEahKVolSPWw/source.gif", message.channel.send("Check je DM!"));
+        return message.author.send("Doei: https://media0.giphy.com/media/jttzrTgEahKVolSPWw/source.gif", message.channel.send("Check je DM lieve schat💖!"));
 
     }
 
-    if(command === `${prefix}maanstad`){
+    if(command === `${prefix}info`){
         
         var botEmbed = new discord.MessageEmbed()
         .setTitle("**__WIE OF WAT IS MAANSTAD?__**")
@@ -46,12 +46,11 @@ client.on("message", async message =>{
             {name: "*Hoe kan ik op de Whitelist terecht komen?*", value: "Je bent verplciht een intake gesprek te vormen met onze intake managers, zij bepalen ook of jij in de server komt ja of nee, ook heeft hogerop het volste recht om je van de whitelist te verwijderen!\nAlvorens je een intake gesprek aangaat moet je eerst alle regels hebben doornomen!"}
         )
         .setThumbnail("https://cdn.discordapp.com/attachments/678506660666277889/740625216287539230/maandstad_logo.jpg")
-        .setImage("https://cdn.discordapp.com/attachments/678506660666277889/740625704848457759/FIVEM_SERVER_BANNER.jpg")
         .setFooter("Made By RealistiqRP", "https://media.discordapp.net/attachments/629335056095117312/740917308872065084/icon_donationpage.png")
         .setTimestamp("Now")
 
 
-        return message.channel.send(botEmbed);
+        return message.author.send(botEmbed, message.channel.send("Check je DM lieve schat💖!"));
         }
 
         if(command === `${prefix}server`){
@@ -70,29 +69,29 @@ client.on("message", async message =>{
             .setFooter("Made By RealistiqRP", "https://media.discordapp.net/attachments/629335056095117312/740917308872065084/icon_donationpage.png")
             .setTimestamp("Now")
 
-            return message.channel.send(botEmbed);
+            return message.author.send(botEmbed, message.channel.send("Check je DM lieve schat💖!"));
         }
 
-if(command === `${prefix}regels`){
+        if(command === `${prefix}regels`){
 
-        var botEmbed = new discord.MessageEmbed()
-        .setTitle("ALGEMENE FIVEM SERVER REGELS")
-        .setDescription("*Rule Version: `1.1`*")
-        .setColor("#ff0000")
-        .addFields(
-            {name: "__Roleplay Rules:__", value: "Je bent verplicht je karakter eigenschappen te volgen, bv. als je een oud persoon bent dat je ook als een opa praat!"},
-            {name: "__Powergaming:__", value: "Je mag geen misbruik maken van je revives, ook telt dit mee dat je geen tactics mag gebruiken bv na een ambulance revive dat je meteen begint te vechten"},
-            {name: "__Safezones:__", value: "Dit houd in dat je binnen de volgende zones niet mag vechten of mensen ontvoeren!\nHet Ziekenhuis, Hier is de enige plaats waar mensen kunnen komen om hun te laten verzorgen, hier mag je dus niet vechten of mensen ontvoeren (inclusief de stoep)\nJe mag burgers niet verplichten om geld te pinnen om daarna ze te bestelen!\nJe Appartement, Hier mag je niemand ontvoeren of vermoorden!\nHeel blokkenpark is een savezone, hier mag je wel vechten maar niemand ontvoeren!"},
-            {name: "__Algemene Regels:__", value: "VDM, VehicleDeathMatch, mensen met opzet aanrijden of dood rijden is niet toegestaan\nRDM, RandomDeathMatch, zonder aanleiding tot RP mag je niet zomaar iemand doodmaken"}
-        )
-        .setThumbnail("https://cdn.discordapp.com/attachments/629335056095117312/740944840552087632/ShyCautiousAfricanpiedkingfisher-size_restricted.gif")
-        .setFooter("Made By RealistiqRP", "https://media.discordapp.net/attachments/629335056095117312/740917308872065084/icon_donationpage.png")
-        .setTimestamp("Now")
-        
-            return message.author.send(botEmbed), message.channel.send("Check je DM! seksie tijger! 😘");
-        }
+            var botEmbed = new discord.MessageEmbed()
+            .setTitle("ALGEMENE FIVEM SERVER REGELS")
+            .setDescription("*Rule Version: `1.1`*")
+            .setColor("#ff0000")
+            .addFields(
+                {name: "__Roleplay Rules:__", value: "*Je bent verplicht je karakter eigenschappen te volgen, bv. als je een oud persoon bent dat je ook als een opa praat!*"},
+                {name: "__Powergaming:__", value: "*Je mag geen misbruik maken van je revives, ook telt dit mee dat je geen tactics mag gebruiken bv na een ambulance revive dat je meteen begint te vechten!*\n\n*Je mag burgers niet verplichten om geld te pinnen om daarna ze te bestelen!*"},
+                {name: "__Safezones:__", value: "*Dit houd in dat je binnen de volgende zones niet mag vechten of mensen ontvoeren!*\n\n*Het Ziekenhuis, Hier is de enige plaats waar mensen kunnen komen om hun te laten verzorgen, hier mag je dus niet vechten of mensen ontvoeren (inclusief de stoep)*\n\n*Je Appartement, Hier mag je niemand ontvoeren of vermoorden!*\n\n*Heel blokkenpark is een savezone, hier mag je wel vechten maar niemand ontvoeren!*\n\n"},
+                {name: "__Algemene Regels:__", value: "*VDM, VehicleDeathMatch, mensen met opzet aanrijden of dood rijden is niet toegestaan*\n\n*RDM, RandomDeathMatch, zonder aanleiding tot RP mag je niet zomaar iemand doodmaken*"}
+            )
+            .setThumbnail("https://cdn.discordapp.com/attachments/678506660666277889/740625216287539230/maandstad_logo.jpg")
+            .setFooter("Made By RealistiqRP", "https://media.discordapp.net/attachments/629335056095117312/740917308872065084/icon_donationpage.png")
+            .setTimestamp("Now")
+            
+                return message.author.send(botEmbed), message.channel.send("Check je DM lieve schat💖");
+            }
 
-        if (command === `${prefix}kick`) {
+        if(command === `${prefix}verwijder`) {
  
             const args = message.content.slice(prefix.length).split(/ +/);
      
@@ -100,7 +99,7 @@ if(command === `${prefix}regels`){
      
             if (!message.guild.me.hasPermission("KICK_MEMBERS")) return message.reply("Missing Permissions, Contact our developers or owners!");
      
-            if (!args[1]) return message.reply("Who need a kick? You forgot the username!");
+            if (!args[1]) return message.reply("Je bent de username vergeten!");
      
             if (!args[2]) return message.reply("What's the reason? Plz enter a reason!");
      
@@ -147,7 +146,7 @@ if(command === `${prefix}regels`){
      
                     msg.delete();
      
-                    message.reply("kick canceled").then(m => m.delete(5000));
+                    message.reply("Kick werdt geanuleerd").then(m => m.delete(5000));
      
                 }
      
@@ -155,23 +154,23 @@ if(command === `${prefix}regels`){
         }
      
      
-        if (command === `${prefix}ban`) {
+        if (command === `${prefix}verban`) {
      
             const args = message.content.slice(prefix.length).split(/ +/);
      
-            if (!args[1]) return message.reply("No user found...");
+            if (!args[1]) return message.reply("Geen gebruiker gevonden...");
      
-            if (!args[2]) return message.reply("What's the reason? Plz enter a reason!");
+            if (!args[2]) return message.reply("Er werdt geen redenen opgegeven!");
      
-            if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply("sorry jij kan dit niet");
+            if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply("Je hebt niet genoeg permissies om dit commando uit te voeren...");
      
-            if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.reply("Missing Permissions, contact the developers or owners!");
+            if (!message.guild.me.hasPermission("BAN_MEMBERS")) return message.reply("Missing Permissions");
      
             var banUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[1]));
      
             var reason = args.slice(2).join(" ");
      
-            if (!banUser) return message.reply("Can't found the user...");
+            if (!banUser) return message.reply("Kan de gebruiker niet vinden...");
      
             var embed = new discord.MessageEmbed()
                 .setColor("#ff0000")
@@ -188,8 +187,8 @@ if(command === `${prefix}regels`){
      
             var embedPrompt = new discord.MessageEmbed()
                 .setColor("GREEN")
-                .setAuthor("Please, react within 30 seconds!")
-                .setDescription(`Do you want to ban ${banUser}?`);
+                .setAuthor("Gelieve binnen 30 seconden te reageren")
+                .setDescription(`Wil je ${banUser} echt verbannen?`);
      
      
             message.channel.send(embedPrompt).then(async msg => {
@@ -203,7 +202,7 @@ if(command === `${prefix}regels`){
      
                     
                     banUser.ban(reason).catch(err => {
-                        if (err) return message.channel.send(`Something went wrong`);
+                        if (err) return message.channel.send(`Something went wrong...`);
                     });
      
                     message.reply(embed);
@@ -212,7 +211,7 @@ if(command === `${prefix}regels`){
      
                     msg.delete();
      
-                    message.reply("Ban Canceled").then(m => m.delete(5000));
+                    message.reply("Verbanning geanuleerd").then(m => m.delete(5000));
      
                 }
      

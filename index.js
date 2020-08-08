@@ -2,12 +2,13 @@ const discord = require("discord.js");
 const botConfig = require("./botConfig.json");
 
 const client = new discord.Client();
-client.login(process.env.token);
+client.login(botConfig.token);
+
 
 client.on("ready", async () =>{
 
     console.log(`${client.user.username} Is Online!`);
-    client.user.setActivity("/help to get started!", {type: "WATCHING"})
+    client.user.setActivity("/help | MaanstadRP", {type: "WATCHING"})
 
 });
 
@@ -30,8 +31,11 @@ client.on("message", async message =>{
         return message.author.send("**Information Of Bot Commands**\n*Het prefix van de bot is `/`*\n\n`/Info`: Geeft deze lijst weer!\n\n`/server`: Geeft informatie over de FiveM Server weer!\n\n`/info`: Geeft informatie over Maanstad weer!\n\n`/status`: Geeft de status van de bot\n\n`/rules`: Geeft de regels"), message.channel.send("Check je DM lieve schat💖!");
     }
     if(command === `${prefix}hallo`){
-        return message.author.send("Doei: https://media0.giphy.com/media/jttzrTgEahKVolSPWw/source.gif", message.channel.send("Check je DM lieve schat💖!"));
-
+        return message.author.send("Vuile hond, waarom stoor je mij op deze rustige dag🤬\nhttps://media1.tenor.com/images/54734cc85cfbf575de2b9f170d0e58e9/tenor.gif", message.channel.send("Fuckin hell waarom dit nou weer, kijk je pm maar gauw snotjonk👶🏼🤬!"));
+    }
+    if(command === `${prefix}18+`){
+        var role= member.guild.roles.cache.find(role => role.name === ("741425000799535176"));
+        return member.roles.add(role), message.author.send("Ik heb je de 18+ rol gegeven!");  
     }
 
     if(command === `${prefix}info`){
@@ -50,7 +54,7 @@ client.on("message", async message =>{
         .setTimestamp("Now")
 
 
-        return message.author.send(botEmbed, message.channel.send("Check je DM lieve schat💖!"));
+        return message.author.send(botEmbed), message.channel.send("Check je DM lieve schat💖!");
         }
 
         if(command === `${prefix}server`){
@@ -62,14 +66,14 @@ client.on("message", async message =>{
             .addFields(
                 {name: "*__Het speel niveau:__*", value: "In Maanstad verwachten wij van elke speler een hoog niveau van roleplay, dit houd in dat je weet wat je doet en je goed in je character kunt houden!"},
                 {name: "*__Spelers & Whitelist__*", value: "Op onze server staat een whitelist, om op de whitelist te komen staan moet je eerst een intake gesprek doen.\nDoor een whitelist en een intake systeem op onze server hopen wij het Roleplay niveau te versterken, zo kiezen wij of jij geschikt bent ja of nee!"},
-                {name: "*__Regels & Downloads__*", value: "Voor de regels kan je op onze website terecht: https://maanstadrp.nl/regels\nVoor Downloads kan je hier terecht: https://maanstadrp.nl/downloads"},
+                {name: "*__Regels & Downloads__*", value: "Voor de regels kan je op onze website terecht: https://maanstadrp.nl/regels\n\nVoor Downloads kan je hier terecht: https://maanstadrp.nl/downloads"},
                 {name: "*__Discord en IC kanalen__*", value: "Als je speelt in onze server staat rechtboven https://invite.gg/maanstadrp, als je deze link invoert op je browser kom je terecht op onze discord!\nOp de discord hebben wij verschillende kanalen, ook hebben wij InCharacter kanalen en in deze kanalen kan jij jou twitter foto's plaatsen, solliciteren, maar ook complimentjes aan elkaar geven!"}
             )
             .setThumbnail("https://cdn.discordapp.com/attachments/678506660666277889/740625216287539230/maandstad_logo.jpg")
             .setFooter("Made By RealistiqRP", "https://media.discordapp.net/attachments/629335056095117312/740917308872065084/icon_donationpage.png")
             .setTimestamp("Now")
 
-            return message.author.send(botEmbed, message.channel.send("Check je DM lieve schat💖!"));
+            return message.author.send(botEmbed), message.channel.send("Check je DM lieve schat💖!");
         }
 
         if(command === `${prefix}regels`){
@@ -118,14 +122,14 @@ client.on("message", async message =>{
 
                 .setTimestamp()
 
-                .setDescription(`**Kicked:** ${kickUser}
+                .setDescription(`**Verwijderd:** ${kickUser}
                 **Admin:** ${message.author}
-                **Reason:** ${reason}`);
+                **Reden:** ${reason}`);
      
             var embedPrompt = new discord.MessageEmbed()
                 .setColor("GREEN")
-                .setAuthor("Please, react within 30 seconds!")
-                .setDescription(`Do you want to kick ${kickUser}?`);
+                .setAuthor("Gelieve binnen 30 seconden te reageren!")
+                .setDescription(`Ben je zeker dat je ${kickUser} wilt verwijderen?`);
      
      
             message.channel.send(embedPrompt).then(async msg => {
@@ -137,7 +141,7 @@ client.on("message", async message =>{
                     msg.delete();
      
                     kickUser.kick(reason).catch(err => {
-                        if (err) return message.channel.send(`Something went wrong...`);
+                        if (err) return message.channel.send(`Er is iets mis gegaan...`);
                     });
      
                     message.reply(embed);
@@ -146,7 +150,7 @@ client.on("message", async message =>{
      
                     msg.delete();
      
-                    message.reply("Kick werdt geanuleerd").then(m => m.delete(5000));
+                    message.reply("Verwijdering werdt geanuleerd").then(m => m.delete(5000));
      
                 }
      
@@ -160,7 +164,7 @@ client.on("message", async message =>{
      
             if (!args[1]) return message.reply("Geen gebruiker gevonden...");
      
-            if (!args[2]) return message.reply("Er werdt geen redenen opgegeven!");
+            if (!args[2]) return message.reply("Er werdt geen reden opgegeven!");
      
             if (!message.member.hasPermission("BAN_MEMBERS")) return message.reply("Je hebt niet genoeg permissies om dit commando uit te voeren...");
      
@@ -181,9 +185,9 @@ client.on("message", async message =>{
 
                 .setTimestamp()
 
-                .setDescription(`**Banned:** ${banUser}
+                .setDescription(`**Verbannen:** ${banUser}
                 **Admin:** ${message.author}
-                **Reason: ** ${reason}`);
+                **Reden: ** ${reason}`);
      
             var embedPrompt = new discord.MessageEmbed()
                 .setColor("GREEN")
@@ -228,4 +232,5 @@ client.on("message", async message =>{
         const filter = (reaction, user) => reactions.includes(reaction.emoji.name) && user.id === author.id;
      
         return message.awaitReactions(filter, { max: 1, time: time }).then(collected => collected.first() && collected.first().emoji.name);
-    }});
+    
+}});

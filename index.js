@@ -2,7 +2,7 @@ const discord = require("discord.js");
 const botConfig = require("./botConfig.json");
 
 const client = new discord.Client();
-client.login(botConfig.token);
+client.login(process.env.token);
 
 
 client.on("ready", async () =>{
@@ -28,7 +28,7 @@ client.on("message", async message =>{
         return message.channel.send("**Status:** `Under Maintenance...👷🏼‍♂️🔧`")
     }
     if(command === `${prefix}help`){
-        return message.author.send("**Information Of Bot Commands**\n*Het prefix van de bot is `/`*\n\n`/Info`: Geeft deze lijst weer!\n\n`/server`: Geeft informatie over de FiveM Server weer!\n\n`/info`: Geeft informatie over Maanstad weer!\n\n`/status`: Geeft de status van de bot\n\n`/rules`: Geeft de regels"), message.channel.send("Check je DM lieve schat💖!");
+        return message.author.send("**Information Of Bot Commands**\n*De prefix van de bot is `/`*\n\n`/Info`: Geeft deze lijst weer!\n\n`/server`: Geeft informatie over de FiveM Server weer!\n\n`/info`: Geeft informatie over Maanstad weer!\n\n`/status`: Geeft de status van de bot\n\n`/rules`: Geeft de regels"), message.channel.send("Check je DM lieve schat💖!");
     }
     if(command === `${prefix}hallo`){
         return message.author.send("Vuile hond, waarom stoor je mij op deze rustige dag🤬\nhttps://media1.tenor.com/images/54734cc85cfbf575de2b9f170d0e58e9/tenor.gif", message.channel.send("Fuckin hell waarom dit nou weer, kijk je pm maar gauw snotjonk👶🏼🤬!"));

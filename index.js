@@ -14,5 +14,4 @@ client.on("ready", () =>{
 client.user.setActivity("with depression", {
   type: "STREAMING",
   url: url here"
-});  
 });

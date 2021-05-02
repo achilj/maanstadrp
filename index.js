@@ -11,7 +11,5 @@ client.on("ready", () =>{
         status: "dnd",  // You can show online, idle... Do not disturb is dnd
     });
     
-client.user.setActivity("with depression", {
-  type: "STREAMING",
-  url: url here"
+client.user.setActivity("/help | MaanstadRP", {type: "WATCHING"})
 });

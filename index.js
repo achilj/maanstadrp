@@ -7,9 +7,6 @@ client.login(process.env.token);
 
 client.on("ready", () =>{
     console.log(`Logged in as ${client.user.tag}!`);
-    client.user.setPresence({
-        status: "dnd",  // You can show online, idle... Do not disturb is dnd
+    client.user.setPresence({status: "dnd"});
+    client.user.setActivity("Hans van MaanstadRP", {type: "WATCHING"})
     });
-    
-client.user.setActivity("/help | MaanstadRP", {type: "WATCHING"})
-});
